@@ -30,7 +30,7 @@ class Server{
     }
     listen(){
         this.app.listen(process.env.PORT,()=>{
-            console.log("servido corriendo en puerto:");
+            console.log("servido corriendo en puerto 8080:");
         });
     }
     async dbConec(){
