@@ -29,6 +29,9 @@ const ProductoSchema=Schema({
     disponible:{
         type:Boolean,
         default:true
+    },
+    img:{
+        type:String
     }
 });
 const Produc=model('Produc',ProductoSchema);

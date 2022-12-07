@@ -42,6 +42,25 @@ const existeProductoId=async(id='')=>{
         throw new Error('no existe el id con este producto');
     }
 }
+const coleccionPermi=async(coleccion='',colecciones=[])=>{
+    const incluida=colecciones.includes(coleccion);
+    if(!incluida){
+        throw new Error(`La coleccion ${coleccion} no es permitida`)
+    }
+    return true;
+
+}
+const verificarData=(data)=>{
+    if (!req.files || Object.keys(req.files).length === 0) {
+        res.status(400).send('No hay archivos que subir');
+        return;
+      }
+      if (!req.files.archivo ) {
+          res.status(400).send('No hay archivos que subir');
+          return;
+        }
+
+}
 
 
 
@@ -50,5 +69,6 @@ module.exports={
     ValidarEmail,
     existeUsuarioId,
     existeProductoId,
-    existeCategoriaId
+    existeCategoriaId,
+    coleccionPermi
 }
